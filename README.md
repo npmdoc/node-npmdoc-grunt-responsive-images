@@ -1,9 +1,14 @@
-# api documentation for  [grunt-responsive-images (v1.10.1)](https://github.com/andismith/grunt-responsive-images)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-responsive-images.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-responsive-images) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-responsive-images.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-responsive-images)
+# npmdoc-grunt-responsive-images
+
+#### api documentation for  [grunt-responsive-images (v1.10.1)](https://github.com/andismith/grunt-responsive-images)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-responsive-images.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-responsive-images) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-responsive-images.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-responsive-images)
+
 #### Produce images at different sizes for responsive websites.
 
-[![NPM](https://nodei.co/npm/grunt-responsive-images.png?downloads=true)](https://www.npmjs.com/package/grunt-responsive-images)
+[![NPM](https://nodei.co/npm/grunt-responsive-images.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/grunt-responsive-images)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-responsive-images/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-grunt-responsive-images_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-responsive-images/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-grunt-responsive-images/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-grunt-responsive-images/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-responsive-images/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-responsive-images/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-grunt-responsive-images/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "andismith",
-        "email": "andi.smith.uk@gmail.com",
         "url": "http://www.andismith.com"
     },
     "bugs": {
@@ -64,13 +68,11 @@
     "main": "Gruntfile.js",
     "maintainers": [
         {
-            "name": "andismith",
-            "email": "andi.smith.uk+npm@gmail.com"
+            "name": "andismith"
         }
     ],
     "name": "grunt-responsive-images",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/andismith/grunt-responsive-images.git"
@@ -81,16 +83,6 @@
     "version": "1.10.1"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module grunt-responsive-images](#apidoc.module.grunt-responsive-images)
-
-
-
-# <a name="apidoc.module.grunt-responsive-images"></a>[module grunt-responsive-images](#apidoc.module.grunt-responsive-images)
 
 
 
