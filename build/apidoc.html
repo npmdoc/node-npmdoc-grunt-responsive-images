@@ -61,12 +61,209 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.grunt-responsive-images">module grunt-responsive-images</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-responsive-images.grunt-responsive-images">
+            function <span class="apidocSignatureSpan"></span>grunt-responsive-images
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.grunt-responsive-images" id="apidoc.module.grunt-responsive-images">module grunt-responsive-images</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-responsive-images.grunt-responsive-images" id="apidoc.element.grunt-responsive-images.grunt-responsive-images">
+        function <span class="apidocSignatureSpan"></span>grunt-responsive-images
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-responsive-images = function (grunt) {
+
+  // Project configuration.
+  grunt.initConfig({
+    jshint: {
+      all: [
+        &#x27;Gruntfile.js&#x27;,
+        &#x27;tasks/*.js&#x27;,
+        &#x27;&#x3c;%= nodeunit.tests %&#x3e;&#x27;
+      ],
+      options: {
+        jshintrc: &#x27;.jshintrc&#x27;
+      }
+    },
+
+    // Before generating any new files, remove any previously-created files.
+    clean: {
+      tests: [&#x27;tmp&#x27;, &#x27;!tmp/new_files_only/magikarp-200.png&#x27;, &#x27;!tmp/new_files_only/magikarp-300.png&#x27;]
+    },
+
+    // Configuration to be run (and then tested).
+    responsive_images: {
+      options: {
+        engine: &#x27;im&#x27;
+      },
+      default_options: {
+        options: {
+        },
+        files: {
+          &#x27;tmp/default_options/minions.jpg&#x27;: &#x27;test/assets/default_options/minions.jpg&#x27;
+        }
+      },
+      no_files: {
+        options: {
+          sizes: [{
+            width: 320
+          }]
+        },
+        files: [{
+          expand: true,
+          src: [&#x27;no_files/**/*.{jpg,gif,png}&#x27;],
+          cwd: &#x27;test/assets/&#x27;,
+          dest: &#x27;tmp/&#x27;
+        }]
+      },
+      file_wildcard_options: {
+        options: {
+          sizes: [{
+            aspectRatio: false,
+            height: 240,
+            name: &#x27;small&#x27;,
+            width: 320
+          },{
+            aspectRatio: false,
+            height: 480,
+            name: &#x27;medium&#x27;,
+            width: 640
+          },{
+            aspectRatio: false,
+            height: 768,
+            name: &#x27;large&#x27;,
+            width: 1024
+          }]
+        },
+        files: [{
+          expand: true,
+          src: [&#x27;file_wildcard_options/**.{jpg,gif,png}&#x27;],
+          cwd: &#x27;test/assets/&#x27;,
+          dest: &#x27;tmp/&#x27;
+        }]
+      },
+      custom_options: {
+        options: {
+          sizes: [{
+            width: 110,
+            name: &#x22;small&#x22;,
+            quality: 40
+          },{
+            width: 220,
+            quality: 100
+          },{
+            width: 330,
+            name: &#x22;large&#x22;,
+            quality: 80
+          },{
+            width: 660,
+            name: &#x22;large&#x22;,
+            suffix: &#x22;_x2&#x22;,  // retina gfx
+            quality: 50
+          },{
+            createNoScaledImage: true,
+            width: 1660,
+            name: &#x22;largest&#x22;,
+            quality: 50
+          }]
+        },
+        files: [{
+          expand: true,
+          src: [&#x27;custom_options/**.{jpg,gif,png}&#x27;],
+          cwd: &#x27;test/assets/&#x27;,
+          dest: &#x27;tmp/&#x27;
+        }]
+      },
+      pixel_sizes: {
+        options: {
+          sizes: [{
+              aspectRatio: false,
+              width: &#x27;10px&#x27;
+            },{
+              aspectRatio: false,
+              height: &#x27;50px&#x27;,
+              width: &#x27;50px&#x27;
+            },{
+              aspectRatio: false,
+              height: &#x27;500px&#x27;,
+              width: &#x27;200px&#x27;
+            }]
+        },
+        files: [{
+          expand: true,
+          src: [&#x27;pixel_sizes/**/*.{jpg,gif,png}&#x27;],
+          cwd: &#x27;test/assets/&#x27;,
+          dest: &#x27;tmp/&#x27;
+        }]
+      },
+      pixel_sizes_custom_unit: {
+        options: {
+          units: {
+            pixel: &#x27;abc123&#x27;
+          },
+          sizes: [{
+            aspectRatio: false,
+            width: &#x27;20px&#x27;,
+          },{
+            aspectRatio: false,
+            height: &#x27;50px&#x27;,
+            width: &#x27;80px&#x27;,
+          },{
+            aspectRatio: false,
+            height: &#x27;500px&#x27;,
+            width: &#x27;500px&#x27;
+          }]
+        },
+        files: [{
+          expand: true,
+          src: [&#x27;pixel_sizes_custom_unit/**/*.{jpg,gif,png}&#x27;],
+          cwd: &#x27;test/assets/&#x27;,
+          dest: &#x27;tmp/&#x27;
+        }]
+      },
+      percentage_sizes: {
+        options: {
+          sizes: [{
+            width: &#x27;10%&#x27;,
+          },{
+            height: &#x27;50%&#x27;,
+            width: &#x27;50%&#x27;,
+          },{
+            height: &#x27;80%&#x27;,
+            width: &#x27;200%&#x27;
+          }]
+        },
+        files: [{
+          expand: true,
+          src: [&#x27;percentage_sizes/**/*.{jpg,gif,png}&#x27;],
+          cwd: &#x27;test/assets/&#x27;,
+          dest: &#x27;tmp/&#x27;
+        }]
+      },
+      percentage_sizes_custom_unit: {
+        options: {
+          units: {
+            percentage: &#x27;abc123&#x27;
+          },
+          sizes: [{
+            width: &#x27;10%&#x27;, ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/andismith/grunt-responsive-images"
-
-    >grunt-responsive-images (v1.10.1)</a>
+    <a href="https://github.com/andismith/grunt-responsive-images">grunt-responsive-images (v1.10.1)</a>
 </h1>
 <h4>Produce images at different sizes for responsive websites.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.grunt-responsive-images">module grunt-responsive-images</a><ol>
 
@@ -91,30 +84,30 @@
   grunt.initConfig({
     jshint: {
       all: [
-        &#x27;Gruntfile.js&#x27;,
-        &#x27;tasks/*.js&#x27;,
-        &#x27;&#x3c;%= nodeunit.tests %&#x3e;&#x27;
+        'Gruntfile.js',
+        'tasks/*.js',
+        '&lt;%= nodeunit.tests %&gt;'
       ],
       options: {
-        jshintrc: &#x27;.jshintrc&#x27;
+        jshintrc: '.jshintrc'
       }
     },
 
     // Before generating any new files, remove any previously-created files.
     clean: {
-      tests: [&#x27;tmp&#x27;, &#x27;!tmp/new_files_only/magikarp-200.png&#x27;, &#x27;!tmp/new_files_only/magikarp-300.png&#x27;]
+      tests: ['tmp', '!tmp/new_files_only/magikarp-200.png', '!tmp/new_files_only/magikarp-300.png']
     },
 
     // Configuration to be run (and then tested).
     responsive_images: {
       options: {
-        engine: &#x27;im&#x27;
+        engine: 'im'
       },
       default_options: {
         options: {
         },
         files: {
-          &#x27;tmp/default_options/minions.jpg&#x27;: &#x27;test/assets/default_options/minions.jpg&#x27;
+          'tmp/default_options/minions.jpg': 'test/assets/default_options/minions.jpg'
         }
       },
       no_files: {
@@ -125,9 +118,9 @@
         },
         files: [{
           expand: true,
-          src: [&#x27;no_files/**/*.{jpg,gif,png}&#x27;],
-          cwd: &#x27;test/assets/&#x27;,
-          dest: &#x27;tmp/&#x27;
+          src: ['no_files/**/*.{jpg,gif,png}'],
+          cwd: 'test/assets/',
+          dest: 'tmp/'
         }]
       },
       file_wildcard_options: {
@@ -135,132 +128,132 @@
           sizes: [{
             aspectRatio: false,
             height: 240,
-            name: &#x27;small&#x27;,
+            name: 'small',
             width: 320
           },{
             aspectRatio: false,
             height: 480,
-            name: &#x27;medium&#x27;,
+            name: 'medium',
             width: 640
           },{
             aspectRatio: false,
             height: 768,
-            name: &#x27;large&#x27;,
+            name: 'large',
             width: 1024
           }]
         },
         files: [{
           expand: true,
-          src: [&#x27;file_wildcard_options/**.{jpg,gif,png}&#x27;],
-          cwd: &#x27;test/assets/&#x27;,
-          dest: &#x27;tmp/&#x27;
+          src: ['file_wildcard_options/**.{jpg,gif,png}'],
+          cwd: 'test/assets/',
+          dest: 'tmp/'
         }]
       },
       custom_options: {
         options: {
           sizes: [{
             width: 110,
-            name: &#x22;small&#x22;,
+            name: "small",
             quality: 40
           },{
             width: 220,
             quality: 100
           },{
             width: 330,
-            name: &#x22;large&#x22;,
+            name: "large",
             quality: 80
           },{
             width: 660,
-            name: &#x22;large&#x22;,
-            suffix: &#x22;_x2&#x22;,  // retina gfx
+            name: "large",
+            suffix: "_x2",  // retina gfx
             quality: 50
           },{
             createNoScaledImage: true,
             width: 1660,
-            name: &#x22;largest&#x22;,
+            name: "largest",
             quality: 50
           }]
         },
         files: [{
           expand: true,
-          src: [&#x27;custom_options/**.{jpg,gif,png}&#x27;],
-          cwd: &#x27;test/assets/&#x27;,
-          dest: &#x27;tmp/&#x27;
+          src: ['custom_options/**.{jpg,gif,png}'],
+          cwd: 'test/assets/',
+          dest: 'tmp/'
         }]
       },
       pixel_sizes: {
         options: {
           sizes: [{
               aspectRatio: false,
-              width: &#x27;10px&#x27;
+              width: '10px'
             },{
               aspectRatio: false,
-              height: &#x27;50px&#x27;,
-              width: &#x27;50px&#x27;
+              height: '50px',
+              width: '50px'
             },{
               aspectRatio: false,
-              height: &#x27;500px&#x27;,
-              width: &#x27;200px&#x27;
+              height: '500px',
+              width: '200px'
             }]
         },
         files: [{
           expand: true,
-          src: [&#x27;pixel_sizes/**/*.{jpg,gif,png}&#x27;],
-          cwd: &#x27;test/assets/&#x27;,
-          dest: &#x27;tmp/&#x27;
+          src: ['pixel_sizes/**/*.{jpg,gif,png}'],
+          cwd: 'test/assets/',
+          dest: 'tmp/'
         }]
       },
       pixel_sizes_custom_unit: {
         options: {
           units: {
-            pixel: &#x27;abc123&#x27;
+            pixel: 'abc123'
           },
           sizes: [{
             aspectRatio: false,
-            width: &#x27;20px&#x27;,
+            width: '20px',
           },{
             aspectRatio: false,
-            height: &#x27;50px&#x27;,
-            width: &#x27;80px&#x27;,
+            height: '50px',
+            width: '80px',
           },{
             aspectRatio: false,
-            height: &#x27;500px&#x27;,
-            width: &#x27;500px&#x27;
+            height: '500px',
+            width: '500px'
           }]
         },
         files: [{
           expand: true,
-          src: [&#x27;pixel_sizes_custom_unit/**/*.{jpg,gif,png}&#x27;],
-          cwd: &#x27;test/assets/&#x27;,
-          dest: &#x27;tmp/&#x27;
+          src: ['pixel_sizes_custom_unit/**/*.{jpg,gif,png}'],
+          cwd: 'test/assets/',
+          dest: 'tmp/'
         }]
       },
       percentage_sizes: {
         options: {
           sizes: [{
-            width: &#x27;10%&#x27;,
+            width: '10%',
           },{
-            height: &#x27;50%&#x27;,
-            width: &#x27;50%&#x27;,
+            height: '50%',
+            width: '50%',
           },{
-            height: &#x27;80%&#x27;,
-            width: &#x27;200%&#x27;
+            height: '80%',
+            width: '200%'
           }]
         },
         files: [{
           expand: true,
-          src: [&#x27;percentage_sizes/**/*.{jpg,gif,png}&#x27;],
-          cwd: &#x27;test/assets/&#x27;,
-          dest: &#x27;tmp/&#x27;
+          src: ['percentage_sizes/**/*.{jpg,gif,png}'],
+          cwd: 'test/assets/',
+          dest: 'tmp/'
         }]
       },
       percentage_sizes_custom_unit: {
         options: {
           units: {
-            percentage: &#x27;abc123&#x27;
+            percentage: 'abc123'
           },
           sizes: [{
-            width: &#x27;10%&#x27;, ...</pre></li>
+            width: '10%', ...</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -273,3 +266,4 @@
     ]
 </div>
 </div>
+</body></html>
